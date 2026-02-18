@@ -25,13 +25,17 @@ function getTagColors(tag: string) {
   return TAG_COLORS[lower] ?? { bg: "bg-tag-default", text: "text-tag-default-text" };
 }
 
+function capitalize(text: string) {
+  return text.replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 export default function Tag({ label }: { label: string }) {
   const colors = getTagColors(label);
   return (
     <span
       className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${colors.bg} ${colors.text}`}
     >
-      {label}
+      {capitalize(label)}
     </span>
   );
 }
