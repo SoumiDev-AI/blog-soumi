@@ -1,65 +1,53 @@
-import Image from "next/image";
+import { getAllPosts } from "@/lib/posts";
+import PostCard from "@/components/PostCard";
+import CTABanner from "@/components/CTABanner";
 
-export default function Home() {
+export default function BlogHome() {
+  const posts = getAllPosts();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+    <div className="mx-auto max-w-5xl px-6 py-12">
+      {/* Hero */}
+      <section className="mb-14 text-center">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-soumi-gray">
+          El blog de Soumi
+        </p>
+        <h1 className="text-4xl font-bold leading-tight text-soumi-charcoal sm:text-5xl">
+          Terapia grupal online,{" "}
+          <span className="text-brand-dark">accesible para todos</span>
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-soumi-gray leading-relaxed">
+          Artículos sobre terapia barata, grupos de apoyo, salud mental y
+          bienestar emocional. Porque cuidar tu mente no debería ser un lujo.
+        </p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://soumi.io"
+            className="cta-button"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            Empieza gratis en Soumi
+            <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
-      </main>
+      </section>
+
+      {/* Posts grid */}
+      {posts.length === 0 ? (
+        <p className="text-center text-soumi-gray">
+          Próximamente nuevos artículos.
+        </p>
+      ) : (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <PostCard key={post.slug} post={post} />
+          ))}
+        </div>
+      )}
+
+      {/* CTA Banner */}
+      <section className="mt-16">
+        <CTABanner />
+      </section>
     </div>
   );
 }
