@@ -29,10 +29,6 @@ export const metadata: Metadata = {
     "terapia accesible",
     "bienestar emocional",
   ],
-  icons: {
-    icon: "/circles.svg",
-    apple: "/circles.svg",
-  },
   metadataBase: new URL("https://blog.soumi.io"),
   openGraph: {
     siteName: "Blog Soumi",
