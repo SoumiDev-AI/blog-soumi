@@ -18,6 +18,7 @@ const TAG_COLORS: Record<string, { bg: string; text: string }> = {
   "ansiedad": { bg: "bg-tag-seguridad", text: "text-tag-seguridad-text" },
   "depresión": { bg: "bg-tag-seguridad", text: "text-tag-seguridad-text" },
   "flexibilidad": { bg: "bg-tag-tech", text: "text-tag-tech-text" },
+  "profesionales": { bg: "bg-tag-pro", text: "text-tag-pro-text" },
 };
 
 function getTagColors(tag: string) {
