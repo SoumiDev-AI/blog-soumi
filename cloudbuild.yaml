@@ -1,0 +1,12 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'europe-west1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/blog-soumi/blog-soumi-git:$SHORT_SHA', '.']
+
+# This fixes your specific error
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+# Push the image to Artifact Registry
+images:
+  - 'europe-west1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/blog-soumi/blog-soumi-git:$SHORT_SHA'
