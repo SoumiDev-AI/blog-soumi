@@ -7,7 +7,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/circles.png"
+            src="/circles.svg"
             alt="Soumi"
             width={36}
             height={36}

@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     "bienestar emocional",
   ],
   icons: {
-    icon: "/circles.png",
-    apple: "/circles.png",
+    icon: "/circles.svg",
+    apple: "/circles.svg",
   },
   metadataBase: new URL("https://blog.soumi.io"),
   openGraph: {
