@@ -1,9 +1,13 @@
 import { getAllPosts } from "@/lib/posts";
 import PostCard from "@/components/PostCard";
 import CTABanner from "@/components/CTABanner";
+import Link from "next/link";
+import Tag from "@/components/Tag";
 
 export default function BlogHome() {
-  const posts = getAllPosts();
+  const allPosts = getAllPosts();
+  const featured = allPosts.filter((p) => p.featured);
+  const rest = allPosts.filter((p) => !p.featured);
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-12">
@@ -31,18 +35,65 @@ export default function BlogHome() {
         </div>
       </section>
 
-      {/* Posts grid */}
-      {posts.length === 0 ? (
-        <p className="text-center text-soumi-gray">
-          Próximamente nuevos artículos.
-        </p>
-      ) : (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <PostCard key={post.slug} post={post} />
-          ))}
-        </div>
+      {/* Featured posts — editorial, non-business */}
+      {featured.length > 0 && (
+        <section className="mb-14">
+          <h2 className="mb-6 text-sm font-semibold uppercase tracking-widest text-soumi-gray">
+            Destacados
+          </h2>
+          <div className="grid gap-5 sm:grid-cols-3">
+            {featured.map((post) => {
+              const formattedDate = new Date(post.date).toLocaleDateString(
+                "es-ES",
+                { year: "numeric", month: "long", day: "numeric" }
+              );
+              return (
+                <Link
+                  key={post.slug}
+                  href={`/${post.slug}`}
+                  className="group relative overflow-hidden rounded-2xl border border-soumi-border bg-white p-5 transition-all hover:shadow-lg hover:-translate-y-1 hover:border-brand-primary"
+                >
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {post.tags.map((tag) => (
+                      <Tag key={tag} label={tag} />
+                    ))}
+                  </div>
+                  <h3 className="text-base font-semibold leading-snug text-soumi-charcoal group-hover:text-soumi-gray transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="mt-2 text-xs text-soumi-gray leading-relaxed line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                  <time
+                    dateTime={post.date}
+                    className="mt-3 block text-[11px] text-soumi-gray/70"
+                  >
+                    {formattedDate}
+                  </time>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
       )}
+
+      {/* All other posts */}
+      <section>
+        <h2 className="mb-6 text-sm font-semibold uppercase tracking-widest text-soumi-gray">
+          Todos los artículos
+        </h2>
+        {rest.length === 0 ? (
+          <p className="text-center text-soumi-gray">
+            Próximamente nuevos artículos.
+          </p>
+        ) : (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {rest.map((post) => (
+              <PostCard key={post.slug} post={post} />
+            ))}
+          </div>
+        )}
+      </section>
 
       {/* CTA Banner */}
       <section className="mt-16">

@@ -19,6 +19,7 @@ export interface PostMeta {
   excerpt: string;
   author: string;
   tags: string[];
+  featured: boolean;
 }
 
 export interface Post extends PostMeta {
@@ -47,6 +48,7 @@ export function getAllPosts(): PostMeta[] {
         excerpt: data.excerpt ?? data.description ?? "",
         author: data.author ?? "Soumi",
         tags: data.tags ?? [],
+        featured: data.featured === true,
       } satisfies PostMeta;
     });
 
@@ -81,6 +83,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     excerpt: data.excerpt ?? data.description ?? "",
     author: data.author ?? "Soumi",
     tags: data.tags ?? [],
+    featured: data.featured === true,
     contentHtml,
   };
 }
