@@ -47,6 +47,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <link rel="icon" href="/circles.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/circles.svg" />
+      </head>
       <body className={`${poppins.variable} font-poppins antialiased`}>
         <Header />
         <main className="min-h-screen">{children}</main>
