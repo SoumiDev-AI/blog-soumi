@@ -17,7 +17,7 @@ export default function PostCard({ post }: { post: PostMeta }) {
             <Tag key={tag} label={tag} />
           ))}
         </div>
-        <h2 className="text-lg font-semibold text-soumi-charcoal leading-snug group-hover:text-soumi-gray transition-colors">
+        <h2 className="text-lg font-semibold text-soumi-charcoal leading-snug group-hover:text-soumi-gray 1">
           {post.title}
         </h2>
         <p className="mt-2.5 text-sm leading-relaxed text-soumi-gray line-clamp-3">
