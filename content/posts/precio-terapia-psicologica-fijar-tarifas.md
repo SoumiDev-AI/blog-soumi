@@ -1,4 +1,5 @@
 ---
+category: seo
 title: "Como fijar el precio de tu terapia psicologica: guia para profesionales"
 description: "Fijar tarifas es uno de los mayores desafios para psicologos independientes. Estrategias para cobrar lo justo sin subvalorar tu trabajo ni perder pacientes."
 date: 2026-02-11

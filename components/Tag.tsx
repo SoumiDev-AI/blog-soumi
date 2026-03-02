@@ -19,6 +19,11 @@ const TAG_COLORS: Record<string, { bg: string; text: string }> = {
   "depresión": { bg: "bg-tag-seguridad", text: "text-tag-seguridad-text" },
   "flexibilidad": { bg: "bg-tag-tech", text: "text-tag-tech-text" },
   "profesionales": { bg: "bg-tag-pro", text: "text-tag-pro-text" },
+  "relaciones": { bg: "bg-tag-grupal", text: "text-tag-grupal-text" },
+  "soledad": { bg: "bg-tag-seguridad", text: "text-tag-seguridad-text" },
+  "burnout": { bg: "bg-tag-precio", text: "text-tag-precio-text" },
+  "autoestima": { bg: "bg-tag-bienestar", text: "text-tag-bienestar-text" },
+  "crecimiento personal": { bg: "bg-tag-tech", text: "text-tag-tech-text" },
 };
 
 function getTagColors(tag: string) {

@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="border-t border-soumi-border bg-brand-light">
         <div className="mx-auto max-w-5xl px-6 py-5 flex flex-col items-center gap-3 border-t border-soumi-border pt-6 text-xs text-soumi-gray sm:flex-row sm:justify-between">
           <span>&copy; {new Date().getFullYear()} Soumi. Todos los derechos reservados.</span>
-          <span>Terapia grupal online &middot; Segura &middot; Accesible &middot; Flexible</span>
+          <span>Charlas grupales online &middot; Seguras &middot; Accesibles &middot; Flexibles</span>
       </div>
     </footer>
   );

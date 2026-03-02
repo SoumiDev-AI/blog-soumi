@@ -1,4 +1,5 @@
 ---
+category: seo
 title: "SEO para psicologos: como aparecer en Google cuando un paciente te busca"
 description: "Guia basica de SEO para psicologos que quieren aparecer en los primeros resultados de Google. Sin tecnicismos, con acciones practicas que puedes implementar hoy."
 date: 2026-02-05

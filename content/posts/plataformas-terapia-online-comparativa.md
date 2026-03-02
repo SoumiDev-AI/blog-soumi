@@ -1,4 +1,5 @@
 ---
+category: seo
 title: "Plataformas de terapia online para psicologos: como elegir donde ofrecer tus servicios"
 description: "Analisis de los diferentes tipos de plataformas de terapia online disponibles para psicologos. Que buscar, que evitar y como elegir la que mejor se adapte a tu practica."
 date: 2026-02-15

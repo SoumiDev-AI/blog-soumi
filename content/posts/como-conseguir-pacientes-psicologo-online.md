@@ -1,4 +1,5 @@
 ---
+category: seo
 title: "Como conseguir pacientes como psicologo online: 7 estrategias que funcionan en 2026"
 description: "Guia practica para psicologos que quieren aumentar su base de pacientes online. Desde posicionamiento digital hasta plataformas de terapia grupal como nuevo canal de captacion."
 date: 2026-02-19

@@ -1,4 +1,5 @@
 ---
+category: seo
 title: "Como usar Instagram y LinkedIn para captar pacientes como psicologo"
 description: "Estrategias concretas para que psicologos usen Instagram y LinkedIn de forma profesional para atraer pacientes. Formatos, frecuencia y errores comunes."
 date: 2026-02-08

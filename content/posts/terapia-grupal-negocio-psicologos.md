@@ -1,4 +1,5 @@
 ---
+category: seo
 title: "Terapia grupal como modelo de negocio para psicologos: por que es el futuro de la practica clinica"
 description: "La terapia grupal no solo es eficaz terapeuticamente, es un modelo de negocio sostenible para psicologos. Analisis de por que los grupos son el futuro de la practica clinica privada."
 date: 2026-02-17

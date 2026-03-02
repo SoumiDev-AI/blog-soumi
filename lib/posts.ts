@@ -20,6 +20,7 @@ export interface PostMeta {
   author: string;
   tags: string[];
   featured: boolean;
+  category: "organic" | "seo";
 }
 
 export interface Post extends PostMeta {
@@ -49,6 +50,7 @@ export function getAllPosts(): PostMeta[] {
         author: data.author ?? "Soumi",
         tags: data.tags ?? [],
         featured: data.featured === true,
+        category: data.category === "seo" ? "seo" : "organic",
       } satisfies PostMeta;
     });
 
@@ -84,6 +86,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     author: data.author ?? "Soumi",
     tags: data.tags ?? [],
     featured: data.featured === true,
+    category: data.category === "seo" ? "seo" : "organic",
     contentHtml,
   };
 }

@@ -12,22 +12,22 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "Blog Soumi | Terapia Grupal Online Accesible y Segura",
+    default: "Blog Soumi | Charlas Grupales Online para tu Bienestar",
     template: "%s | Blog Soumi",
   },
   description:
-    "Terapia grupal online económica y segura. Artículos sobre salud mental accesible, terapia barata, bienestar emocional y grupos de apoyo online.",
+    "Charlas grupales online accesibles y seguras. Artículos sobre salud mental, bienestar emocional, grupos de apoyo y crecimiento personal. Cuidar tu mente no debería ser un lujo.",
   keywords: [
-    "terapia barata",
-    "terapia online económica",
-    "terapia grupal online",
-    "psicólogo online barato",
-    "grupos de apoyo online",
-    "salud mental accesible",
-    "terapia de grupo",
-    "chat terapéutico",
-    "terapia accesible",
+    "charlas grupales online",
+    "grupos de apoyo emocional",
     "bienestar emocional",
+    "salud mental accesible",
+    "apoyo emocional online",
+    "grupos de apoyo online",
+    "salud mental jóvenes",
+    "ansiedad y estrés",
+    "crecimiento personal",
+    "comunidad de apoyo",
   ],
   metadataBase: new URL("https://blog.soumi.io"),
   openGraph: {

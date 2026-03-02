@@ -1,4 +1,5 @@
 ---
+category: seo
 title: "Tendencias en psicologia online para 2026: lo que todo terapeuta deberia saber"
 description: "El panorama de la psicologia online esta cambiando rapido. Estas son las tendencias que definiran la practica clinica digital en 2026 y como prepararte para ellas."
 date: 2026-02-13

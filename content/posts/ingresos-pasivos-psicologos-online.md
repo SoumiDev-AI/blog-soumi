@@ -1,4 +1,5 @@
 ---
+category: seo
 title: "Ingresos recurrentes para psicologos: mas alla de la sesion individual"
 description: "Como generar ingresos recurrentes y diversificados como psicologo. Modelos que van mas alla del cobro por sesion y construyen estabilidad financiera."
 date: 2026-02-07

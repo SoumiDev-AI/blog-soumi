@@ -1,4 +1,5 @@
 ---
+category: seo
 title: "Guia para facilitar terapia grupal por chat: habilidades que todo terapeuta necesita"
 description: "Facilitar un grupo terapeutico por chat requiere habilidades especificas. Guia practica para terapeutas que quieren dominar este formato emergente."
 date: 2026-02-09

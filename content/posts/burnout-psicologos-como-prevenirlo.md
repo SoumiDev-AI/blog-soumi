@@ -1,4 +1,5 @@
 ---
+category: seo
 title: "Burnout en psicologos: como cuidar tu salud mental mientras cuidas la de otros"
 description: "El agotamiento profesional afecta a mas del 50% de los terapeutas. Estrategias practicas para prevenir el burnout y construir una practica clinica sostenible."
 date: 2026-02-16

@@ -1,4 +1,5 @@
 ---
+category: seo
 title: "Como montar una consulta de psicologia online desde cero: guia paso a paso"
 description: "Todo lo que necesitas saber para iniciar tu practica de psicologia online. Desde los requisitos legales hasta la captacion de pacientes, en una guia pensada para terapeutas."
 date: 2026-02-12

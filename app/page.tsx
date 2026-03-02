@@ -7,7 +7,8 @@ import Tag from "@/components/Tag";
 export default function BlogHome() {
   const allPosts = getAllPosts();
   const featured = allPosts.filter((p) => p.featured);
-  const rest = allPosts.filter((p) => !p.featured);
+  const organic = allPosts.filter((p) => p.category === "organic" && !p.featured);
+  const seo = allPosts.filter((p) => p.category === "seo");
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-12">
@@ -17,12 +18,12 @@ export default function BlogHome() {
           El blog de Soumi
         </p>
         <h1 className="text-4xl font-bold leading-tight text-soumi-charcoal sm:text-5xl">
-          Terapia grupal online,{" "}
-          <span className="text-brand-dark">accesible para todos</span>
+          Charlas grupales online,{" "}
+          <span className="text-brand-dark">accesibles para todos</span>
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-soumi-gray leading-relaxed">
-          Artículos sobre terapia barata, grupos de apoyo, salud mental y
-          bienestar emocional. Porque cuidar tu mente no debería ser un lujo.
+          Artículos sobre salud mental, bienestar emocional, grupos de apoyo y
+          crecimiento personal. Porque cuidar tu mente no debería ser un lujo.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
@@ -35,7 +36,7 @@ export default function BlogHome() {
         </div>
       </section>
 
-      {/* Featured posts — editorial, non-business */}
+      {/* Featured posts — editorial highlights */}
       {featured.length > 0 && (
         <section className="mb-14">
           <h2 className="mb-6 text-sm font-semibold uppercase tracking-widest text-soumi-gray">
@@ -77,28 +78,38 @@ export default function BlogHome() {
         </section>
       )}
 
-      {/* All other posts */}
-      <section>
-        <h2 className="mb-6 text-sm font-semibold uppercase tracking-widest text-soumi-gray">
-          Todos los artículos
-        </h2>
-        {rest.length === 0 ? (
-          <p className="text-center text-soumi-gray">
-            Próximamente nuevos artículos.
-          </p>
-        ) : (
+      {/* Organic posts — genuine editorial content */}
+      {organic.length > 0 && (
+        <section className="mb-14">
+          <h2 className="mb-6 text-sm font-semibold uppercase tracking-widest text-soumi-gray">
+            Últimos artículos
+          </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {rest.map((post) => (
+            {organic.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}
           </div>
-        )}
-      </section>
+        </section>
+      )}
 
       {/* CTA Banner */}
-      <section className="mt-16">
+      <section className="mt-4 mb-14">
         <CTABanner />
       </section>
+
+      {/* SEO posts — professional content, lower visibility */}
+      {seo.length > 0 && (
+        <section className="border-t border-soumi-border/50 pt-10">
+          <h2 className="mb-6 text-sm font-semibold uppercase tracking-widest text-soumi-gray/60">
+            Para profesionales
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {seo.map((post) => (
+              <PostCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

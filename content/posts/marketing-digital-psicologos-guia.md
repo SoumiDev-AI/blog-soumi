@@ -1,4 +1,5 @@
 ---
+category: seo
 title: "Marketing digital para psicologos: guia practica sin perder la etica profesional"
 description: "Como hacer marketing etico siendo psicologo. Estrategias de visibilidad digital que respetan los limites deontologicos y atraen pacientes de forma genuina."
 date: 2026-02-18
