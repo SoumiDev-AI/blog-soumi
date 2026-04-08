@@ -13,19 +13,28 @@ export default function Header() {
             height={36}
             className="h-8 w-8 object-contain sm:h-9 sm:w-9"
           />
+          <span className="text-sm font-semibold text-soumi-charcoal sm:text-base">
+            Soumi
+          </span>
         </Link>
         <nav className="flex items-center gap-2 sm:gap-5 text-sm">
           <Link
             href="/"
             className="hidden sm:inline-block rounded-full px-3 py-1.5 text-soumi-gray transition-all hover:bg-brand-light hover:text-soumi-charcoal"
           >
-            Profesionales
+            Blog
           </Link>
           <a
-            href="https://soumi.io"
+            href="https://soumi.io/funcionalidades"
+            className="hidden sm:inline-block rounded-full px-3 py-1.5 text-soumi-gray transition-all hover:bg-brand-light hover:text-soumi-charcoal"
+          >
+            Funcionalidades
+          </a>
+          <a
+            href="https://soumi.io/precios"
             className="rounded-full bg-soumi-charcoal px-4 py-2 text-xs font-medium text-white transition-all hover:bg-[#1F2937] hover:shadow-lg sm:px-5 sm:text-sm"
           >
-            Probar Soumi gratis
+            Solicita una demo
           </a>
         </nav>
       </div>

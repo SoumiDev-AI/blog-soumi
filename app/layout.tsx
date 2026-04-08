@@ -12,26 +12,26 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "Blog Soumi | Charlas Grupales Online para tu Bienestar",
+    default: "Blog Soumi | CRM para Psicólogos — Recursos y Guías",
     template: "%s | Blog Soumi",
   },
   description:
-    "Charlas grupales online accesibles y seguras. Artículos sobre salud mental, bienestar emocional, grupos de apoyo y crecimiento personal. Cuidar tu mente no debería ser un lujo.",
+    "Blog de Soumi, el CRM para psicólogos en España. Artículos sobre gestión de consulta, herramientas terapéuticas, marketing para psicólogos y tendencias en psicología digital.",
   keywords: [
-    "charlas grupales online",
-    "grupos de apoyo emocional",
-    "bienestar emocional",
-    "salud mental accesible",
-    "apoyo emocional online",
-    "grupos de apoyo online",
-    "salud mental jóvenes",
-    "ansiedad y estrés",
-    "crecimiento personal",
-    "comunidad de apoyo",
+    "CRM para psicólogos",
+    "software para psicólogos",
+    "gestión consulta psicología",
+    "marketing para psicólogos",
+    "herramientas terapéuticas digitales",
+    "diario terapéutico",
+    "psicología online España",
+    "captar pacientes psicólogo",
+    "facturación psicólogos",
+    "tecnología salud mental",
   ],
   metadataBase: new URL("https://blog.soumi.io"),
   openGraph: {
-    siteName: "Blog Soumi",
+    siteName: "Blog Soumi — CRM para Psicólogos",
     locale: "es_ES",
     type: "website",
   },
@@ -50,6 +50,14 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/circles.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/circles.svg" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8PN132Y5B"></script>
+        {/* GA4 config - static trusted content, no XSS risk */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-K8PN132Y5B');
+        `}} />
       </head>
       <body className={`${poppins.variable} font-poppins antialiased`}>
         <Header />

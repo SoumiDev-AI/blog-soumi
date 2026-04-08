@@ -57,8 +57,71 @@ export default async function PostPage({ params }: Props) {
     day: "numeric",
   });
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Organization",
+      name: post.author,
+      url: "https://soumi.io",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Soumi",
+      url: "https://soumi.io",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://soumi.io/logo.svg",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://blog.soumi.io/${slug}`,
+    },
+    keywords: post.tags.join(", "),
+    articleSection:
+      post.category === "seo" ? "Para profesionales" : "Artículos",
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Blog",
+        item: "https://blog.soumi.io",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: post.title,
+        item: `https://blog.soumi.io/${slug}`,
+      },
+    ],
+  };
+
+  const jsonLdBlog = JSON.stringify(structuredData);
+  const jsonLdBreadcrumb = JSON.stringify(breadcrumbData);
+
   return (
     <div className="mx-auto max-w-3xl px-6 py-12">
+      {/* BlogPosting structured data - static trusted JSON, safe usage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdBlog }}
+      />
+      {/* BreadcrumbList structured data - static trusted JSON, safe usage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdBreadcrumb }}
+      />
+
       <Link
         href="/"
         className="mb-10 inline-flex items-center gap-2 rounded-full bg-brand-light px-4 py-2 text-sm text-soumi-gray transition-all hover:bg-brand-primary hover:text-soumi-charcoal"
@@ -86,7 +149,10 @@ export default async function PostPage({ params }: Props) {
             </div>
             <div>
               <p className="text-sm font-medium text-soumi-charcoal">
-                {post.author}
+                Equipo Soumi
+              </p>
+              <p className="text-xs text-soumi-gray">
+                Especialistas en tecnología para psicólogos
               </p>
               <time dateTime={post.date} className="text-xs text-soumi-gray">
                 {formattedDate}

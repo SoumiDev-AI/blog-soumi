@@ -18,6 +18,7 @@ export interface PostMeta {
   date: string;
   excerpt: string;
   author: string;
+  authorTitle?: string;
   tags: string[];
   featured: boolean;
   category: "organic" | "seo";
@@ -48,6 +49,7 @@ export function getAllPosts(): PostMeta[] {
         date: normalizeDate(data.date),
         excerpt: data.excerpt ?? data.description ?? "",
         author: data.author ?? "Soumi",
+        authorTitle: data.authorTitle,
         tags: data.tags ?? [],
         featured: data.featured === true,
         category: data.category === "seo" ? "seo" : "organic",
@@ -84,6 +86,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     date: normalizeDate(data.date),
     excerpt: data.excerpt ?? data.description ?? "",
     author: data.author ?? "Soumi",
+    authorTitle: data.authorTitle,
     tags: data.tags ?? [],
     featured: data.featured === true,
     category: data.category === "seo" ? "seo" : "organic",
